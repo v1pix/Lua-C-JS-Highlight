@@ -14,7 +14,7 @@ Perfect for developers working with:
 
 ## ✨ Key Features
 
-* 🔍 **Auto-Detection**: Recognizes `ffi.cdef`, `ffi.typeof`, and `panorama.loadstring` automatically.
+* 🔍 **Auto-Detection**: Recognizes `ffi.cdef`, `ffi.typeof`, `ffi.new`, and `panorama.loadstring` automatically.
 * 🛠️ **Manual Tags**: Force highlighting for any block using `--[[c]]` or `--[[js]]` comments.
 * 📦 **Zero Config**: Works out of the box with standard Lua grammars.
 * 🚀 **Performance**: Lightweight injection that doesn't slow down your editor.
