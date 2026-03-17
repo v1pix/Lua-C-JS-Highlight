@@ -1,0 +1,45 @@
+{
+    "name": "lua-c-js-highlight",
+    "displayName": "Lua C/JS Highlight",
+    "description": "Lua C/JS Highlight is a Visual Studio Code extension that provides syntax highlighting for C and JavaScript code embedded within Lua files. It enhances the readability of Lua scripts that contain C or JavaScript code snippets by applying appropriate syntax highlighting to these sections.",
+    "version": "1.0.0",
+    "publisher": "v1pix",
+    "engines": {
+        "vscode": "^1.80.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "keywords": [
+        "lua",
+        "luajit",
+        "ffi",
+        "panorama",
+        "highlight",
+        "c",
+        "javascript"
+    ],
+	"author": {
+		"name": "v1pix",
+		"url": "https://github.com/v1pix"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/v1pix/Lua-C-JS-Highlight"
+	},
+	"homepage": "https://github.com/v1pix/Lua-C-JS-Highlight",
+    "contributes": {
+        "grammars": [
+            {
+                "scopeName": "lua.c",
+                "path": "./syntaxes/c.language.json",
+                "injectTo": [ "source.lua" ]
+            },
+            {
+                "scopeName": "lua.js",
+                "path": "./syntaxes/js.language.json",
+                "injectTo": [ "source.lua" ]
+            }
+        ]
+    }
+}

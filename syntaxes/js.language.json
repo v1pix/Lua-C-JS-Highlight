@@ -1,0 +1,63 @@
+{
+    "scopeName": "lua.js",
+    "injectionSelector": "L:source.lua -comment -string",
+    "patterns": [
+        {
+            "name": "meta.embedded.lua-js",
+            "begin": "(panorama\\.loadstring)\\s*(\\()?\\s*(\\[\\[)",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function.lua"
+                },
+                "2": {
+                    "name": "punctuation.bracket.round.lua"
+                },
+                "3": {
+                    "name": "punctuation.definition.string.begin.lua"
+                }
+            },
+            "end": "(\\]\\])",
+            "endCaptures": {
+                "1": {
+                    "name": "punctuation.definition.string.end.lua"
+                }
+            },
+            "patterns": [
+                {
+                    "match": "\\$",
+                    "name": "variable.other.constant.lua"
+                },
+                {
+                    "include": "source.js"
+                }
+            ]
+        },
+        {
+            "name": "meta.embedded.inline-js-alt",
+            "begin": "(--\\[\\[\\s*(?:js|JS|javascript|JavaScript)\\s*\\]\\])\\s*(\\[\\[)",
+            "beginCaptures": {
+                "1": {
+                    "name": "comment.block.lua"
+                },
+                "2": {
+                    "name": "punctuation.definition.string.begin.lua"
+                }
+            },
+            "end": "(\\]\\])",
+            "endCaptures": {
+                "1": {
+                    "name": "punctuation.definition.string.end.lua"
+                }
+            },
+            "patterns": [
+                {
+                    "match": "\\$",
+                    "name": "variable.other.constant.lua"
+                },
+                {
+                    "include": "source.js"
+                }
+            ]
+        }
+    ]
+}

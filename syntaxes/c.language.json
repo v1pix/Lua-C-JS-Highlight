@@ -1,0 +1,63 @@
+{
+    "scopeName": "lua.c",
+    "injectionSelector": "L:source.lua -comment -string",
+    "patterns": [
+        {
+            "name": "meta.embedded.lua-ffi",
+            "begin": "(ffi\\.(?:typeof|cdef|new))\\s*(\\()?\\s*(\\[(=*)\\[)",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function.lua"
+                },
+                "2": {
+                    "name": "punctuation.bracket.round.lua"
+                },
+                "3": {
+                    "name": "punctuation.definition.string.begin.lua"
+                }
+            },
+            "end": "(\\]\\4\\])",
+            "endCaptures": {
+                "1": {
+                    "name": "punctuation.definition.string.end.lua"
+                }
+            },
+            "patterns": [
+                {
+                    "match": "\\$",
+                    "name": "variable.other.constant.lua"
+                },
+                {
+                    "include": "source.c"
+                }
+            ]
+        },
+        {
+            "name": "meta.embedded.inline-c-alt",
+            "begin": "(--\\[\\[\\s*(?:c|cpp|C|CPP)\\s*\\]\\])\\s*(\\[(=*)\\[)",
+            "beginCaptures": {
+                "1": {
+                    "name": "comment.block.lua"
+                },
+                "2": {
+                    "name": "punctuation.definition.string.begin.lua"
+                }
+            },
+            "end": "(\\]\\3\\])",
+            "endCaptures": {
+                "1": {
+                    "name": "punctuation.definition.string.end.lua"
+                }
+            },
+            "patterns": [
+                {
+                    "match": "\\$",
+                    "name": "variable.other.constant.lua"
+                },
+                {
+                    "include": "source.c"
+                }
+            ]
+        }
+    ]
+}
